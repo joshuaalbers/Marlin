@@ -26,11 +26,14 @@
 #define  HardwareSerial_h // trick to disable the standard HWserial
 #endif
 
+// Metrix Brainwave requires analogInputToDigitalPin to be defined even if ARDUINO >= 100
 #if (ARDUINO >= 100)
 # include "Arduino.h"
 #else
 # include "WProgram.h"
-  //Arduino < 1.0.0 does not define this, so we need to do it ourselfs
+#endif
+
+#if defined(__AVR_AT90USB646__) || (ARDUINO < 100)
 # define analogInputToDigitalPin(p) ((p) + A0)
 #endif
 
