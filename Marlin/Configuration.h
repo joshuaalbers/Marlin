@@ -83,17 +83,16 @@
 #define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
-//#define DELTA_DIAGONAL_ROD 215.0 // mm
-#define DELTA_DIAGONAL_ROD 289.5
+#define DELTA_DIAGONAL_ROD 324.0
 
-// Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 175.0 // mm
+// Horizontal offset from middle of printer to front edge of the vertical beam
+#define DELTA_SMOOTH_ROD_OFFSET 215.0 // mm
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 19.9 // mm
+#define DELTA_EFFECTOR_OFFSET 19.75 // mm
 
-// Horizontal offset of the universal joints on the carriages.
-#define DELTA_CARRIAGE_OFFSET 19.5 // mm
+// Horizontal offset of the universal joints on the carriages from the front edge of the vertical beam
+#define DELTA_CARRIAGE_OFFSET 16.33 // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
@@ -312,7 +311,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
 #define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR false    // for Mendel set to false, for Orca set to true
-#define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
+#define INVERT_E0_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 
@@ -345,7 +344,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 205  // For delta: Distance between nozzle and print surface after homing.
-#define MANUAL_Z_HOME_POS 150  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 170  // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 24  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
@@ -358,7 +357,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // default settings
 
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {100, 100, 100, 100}
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {160, 160, 160, 160}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {200, 200, 200, 200}
 #define DEFAULT_MAX_FEEDRATE          {200, 200, 200, 200}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,9000,9000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
