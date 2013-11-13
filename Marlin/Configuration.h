@@ -83,7 +83,7 @@
 #define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 324.0
+#define DELTA_DIAGONAL_ROD 323.2
 
 // Horizontal offset from middle of printer to front edge of the vertical beam
 #define DELTA_SMOOTH_ROD_OFFSET 215.0 // mm
@@ -324,10 +324,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 90
-#define X_MIN_POS -90
-#define Y_MAX_POS 90
-#define Y_MIN_POS -90
+#define X_MAX_POS 120
+#define X_MIN_POS -120
+#define Y_MAX_POS 120
+#define Y_MIN_POS -120
 #define Z_MAX_POS MANUAL_Z_HOME_POS
 #define Z_MIN_POS 0
 
@@ -344,7 +344,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 205  // For delta: Distance between nozzle and print surface after homing.
-#define MANUAL_Z_HOME_POS 170  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 170.5  // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 24  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
@@ -358,8 +358,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {100, 100, 100, 100}
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {200, 200, 200, 200}
-#define DEFAULT_MAX_FEEDRATE          {200, 200, 200, 200}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000,9000,9000,9000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_FEEDRATE          {300, 300, 300, 300}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {9000, 9000, 9000, 9000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
@@ -371,8 +371,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // #define EXTRUDER_OFFSET_Y {0.0, 5.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
-#define DEFAULT_XYJERK                20.0    // (mm/sec)
-#define DEFAULT_ZJERK                 20.0    // (mm/sec)
+#define DEFAULT_XYJERK                2.0    // (mm/sec)
+#define DEFAULT_ZJERK                 2.0    // (mm/sec)
 #define DEFAULT_EJERK                 20.0    // (mm/sec)
 
 //===========================================================================
