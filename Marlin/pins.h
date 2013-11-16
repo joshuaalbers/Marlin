@@ -1412,7 +1412,12 @@
 #define Z_STEP_PIN         17
 #define Z_DIR_PIN          19
 #define Z_ENABLE_PIN       18
-#define Z_STOP_PIN          5
+/* instructions for using ICSP pins 4 and 6 as probe pins
+   from https://groups.google.com/forum/?fromgroups#!searchin/deltabot/brainwave/deltabot/mrGXHvRv-ZA/sFiemkMm0RsJ
+*/
+//#define Z_STOP_PIN          5
+#define Z_MAX_PIN          5
+#define Z_MIN_PIN          10 // reused MOSI pin as autolevel Z probe
 #define Z_ATT_PIN          16
 
 #define E0_STEP_PIN        21
