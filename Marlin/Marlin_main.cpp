@@ -825,8 +825,8 @@ static void homeaxis(int axis) {
 
 void deploy_z_probe() {
   feedrate = homing_feedrate[X_AXIS];
-  destination[X_AXIS] = 20;
-  destination[Y_AXIS] = 140;
+  destination[X_AXIS] = 30;
+  destination[Y_AXIS] = 145;
   destination[Z_AXIS] = 80;
   prepare_move_raw();
 
@@ -841,20 +841,19 @@ void retract_z_probe() {
   destination[Z_AXIS] = current_position[Z_AXIS] + 20;
   prepare_move_raw();
 
-  destination[X_AXIS] = -70;
-  destination[Y_AXIS] = -120;
+  destination[X_AXIS] = -86;
+  destination[Y_AXIS] = -115;
   destination[Z_AXIS] = 30;
   prepare_move_raw();
 
   // Move the nozzle below the print surface to push the probe up.
   feedrate = homing_feedrate[Z_AXIS]/10;
-  destination[Z_AXIS] = current_position[Z_AXIS] - 33;
+  destination[Z_AXIS] = current_position[Z_AXIS] - 36;
   prepare_move_raw();
 
   feedrate = homing_feedrate[Z_AXIS];
-  destination[Z_AXIS] = current_position[Z_AXIS] + 30;
-  destination[X_AXIS] = -70;
-  destination[Y_AXIS] = -70;
+  destination[Z_AXIS] = current_position[Z_AXIS] + 10;
+
   prepare_move_raw();
   st_synchronize();
 }
