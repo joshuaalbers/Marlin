@@ -89,10 +89,10 @@
 #define DELTA_SMOOTH_ROD_OFFSET 215.0 // mm
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 19.75 // mm
+#define DELTA_EFFECTOR_OFFSET 19.00 // mm
 
 // Horizontal offset of the universal joints on the carriages from the front edge of the vertical beam
-#define DELTA_CARRIAGE_OFFSET 16.4 // mm
+#define DELTA_CARRIAGE_OFFSET 22.5 // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
@@ -344,9 +344,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 205  // For delta: Distance between nozzle and print surface after homing.
-#define MANUAL_Z_HOME_POS 165  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 148.6  // For delta: Distance between nozzle and print surface after homing.
 
-#define AUTOLEVEL_GRID 24  // Distance between autolevel Z probing points, should be less than print surface radius/3.
+#define AUTOLEVEL_GRID 36  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E

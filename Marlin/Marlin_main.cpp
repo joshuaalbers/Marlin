@@ -838,17 +838,17 @@ void deploy_z_probe() {
 
 void retract_z_probe() {
   feedrate = homing_feedrate[X_AXIS];
-  destination[Z_AXIS] = current_position[Z_AXIS] + 20;
+  destination[Z_AXIS] = current_position[Z_AXIS] + 80;
   prepare_move_raw();
 
-  destination[X_AXIS] = -86;
-  destination[Y_AXIS] = -115;
+  destination[X_AXIS] = -100;
+  destination[Y_AXIS] = -118;
   destination[Z_AXIS] = 30;
   prepare_move_raw();
 
   // Move the nozzle below the print surface to push the probe up.
   feedrate = homing_feedrate[Z_AXIS]/10;
-  destination[Z_AXIS] = current_position[Z_AXIS] - 36;
+  destination[Z_AXIS] = current_position[Z_AXIS] - 33;
   prepare_move_raw();
 
   feedrate = homing_feedrate[Z_AXIS];
@@ -884,7 +884,7 @@ float z_probe() {
 		    current_position[E_AXIS]);
 
   feedrate = homing_feedrate[Z_AXIS];
-  destination[Z_AXIS] = mm+2;
+  destination[Z_AXIS] = mm+4; //compensating for dips during fast moves over larger print surface
   prepare_move_raw();
   return mm;
 }
