@@ -823,16 +823,16 @@ static void homeaxis(int axis) {
 }
 #define HOMEAXIS(LETTER) homeaxis(LETTER##_AXIS)
 
-void deploy_z_probe() {
+void deploy_z_probe() { //heavily modified for FSR levelling
   feedrate = homing_feedrate[X_AXIS];
-  destination[X_AXIS] = 30;
-  destination[Y_AXIS] = 145;
-  destination[Z_AXIS] = 80;
+  destination[X_AXIS] = 0; 
+  destination[Y_AXIS] = 0;
+  destination[Z_AXIS] = 20;
   prepare_move_raw();
 
-  feedrate = homing_feedrate[X_AXIS]/10;
-  destination[X_AXIS] = -20;
-  prepare_move_raw();
+  //feedrate = homing_feedrate[X_AXIS]/10;
+  //destination[X_AXIS] = -20;
+  //prepare_move_raw();
   st_synchronize();
 }
 
@@ -1147,10 +1147,10 @@ void process_commands()
       saved_feedmultiply = feedmultiply;
       feedmultiply = 100;
 
-      deploy_z_probe();
+      deploy_z_probe(); //positions head for FSR bed levelling
       calibrate_print_surface(z_probe_offset[Z_AXIS] +
 	(code_seen(axis_codes[Z_AXIS]) ? code_value() : 0.0));
-      retract_z_probe();
+      //retract_z_probe(); //disabled for FSR bed levelling
 
       feedrate = saved_feedrate;
       feedmultiply = saved_feedmultiply;
